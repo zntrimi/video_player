@@ -6,16 +6,16 @@
     <title>Auto Redirect</title>
     <style>
         body, html {
-            height: 100%;
             margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000;
         }
         video {
-            width: 80%;
-            height: auto;
+            height: 100%;
         }
     </style>
 </head>
@@ -29,8 +29,19 @@
         document.addEventListener("DOMContentLoaded", function() {
             var video = document.getElementById("myVideo");
 
+            // URLパラメータを取得する関数
+            function getQueryParams() {
+                return window.location.search;
+            }
+
+            var params = getQueryParams();
+            var redirectUrl = "https://classroomadventure.fillout.com/nicos-feedback"; // リダイレクト先のベースURLを指定
+
+            // パラメータをリダイレクト先URLに追加
+            var urlWithParams = redirectUrl + params;
+
             video.onended = function() {
-                window.location.href = "https://www.google.com"; // リダイレクト先のURLを指定
+                window.location.href = urlWithParams;
             };
         });
     </script>
