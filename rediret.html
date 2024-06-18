@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Redirect</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+        video {
+            width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <video id="myVideo" controls autoplay>
+        <source src="https://classroom-adventure.s3.amazonaws.com/Dareka+no+life/lecture_1.webm" type="video/webm">
+        お使いのブラウザは動画タグをサポートしていません。
+    </video>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var video = document.getElementById("myVideo");
+
+            video.onended = function() {
+                window.location.href = "https://www.google.com"; // リダイレクト先のURLを指定
+            };
+        });
+    </script>
+</body>
+</html>
