@@ -1,12 +1,27 @@
-<!-- simple html code just with video -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Video</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        video {
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <video width="320" height="240" controls>
+    <video controls>
         <source src="https://classroom-adventure.s3.amazonaws.com/Dareka+no+life/pregame_1.webm" type="video/webm">
         Your browser does not support the video tag.
     </video>
+</body>
 </html>
